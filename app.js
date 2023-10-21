@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 
 var whitelist = [
+  "https://anwar-taxi-web-app.vercel.app/",
   "http://localhost:4200",
   "http://localhost:4201"
 ];
