@@ -3,7 +3,8 @@ require("dotenv").config();
 
 const dbConfig = {
   connectionString: process.env.POSTGRES_URL + "?sslmode=require",
-  dialect: process.env.DB_DIALECT
+  dialect: process.env.DB_DIALECT,
+  host:process.env.POSTGRES_HOST
 };
 
 let config = dbConfig;
