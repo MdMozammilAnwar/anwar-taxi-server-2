@@ -17,6 +17,9 @@ let sequelize = new Sequelize(
     host: config.host,
     port: config.port,
     dialect: config.dialect
+  },
+  {
+    dialectModule: require('pg')
   }
 );
 
