@@ -17,7 +17,12 @@ let sequelize = new Sequelize(
   {
     host: config.host,
     port: config.port,
-    dialect: config.dialect
+    dialect: config.dialect,
+    dialectOptions: {
+      ssl: {
+        require: true, // This enforces the use of SSL
+      }
+    }
   },
   {
     dialectModule: require('pg')
