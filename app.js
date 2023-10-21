@@ -11,24 +11,28 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 // parse application/json
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 
-var whitelist = [
-  "https://anwar-taxi-web-app.vercel.app/",
-  "http://localhost:4200",
-  "http://localhost:4201"
-];
+// var whitelist = [
+//   "https://anwar-taxi-web-app.vercel.app/",
+//   "http://localhost:4200",
+//   "http://localhost:4201"
+// ];
 
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || whitelist.indexOf(origin) != -1) {
-      callback(null, true);
-    } else {
-      console.log("Not allowed by CORS origin:" + origin);
-      callback(new Error("Not allowed by CORS origin:" + origin));
-    }
-  },
-};
+// var corsOptions = {
+//   origin: function (origin, callback) {
+//     if (!origin || whitelist.indexOf(origin) != -1) {
+//       callback(null, true);
+//     } else {
+//       console.log("Not allowed by CORS origin:" + origin);
+//       callback(new Error("Not allowed by CORS origin:" + origin));
+//     }
+//   },
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors({
+  origin: '*',
+}));
+
 
 // custom routes
 
