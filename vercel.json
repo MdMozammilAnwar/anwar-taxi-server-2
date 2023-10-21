@@ -1,15 +1,10 @@
 {
-    "version":1,
-    "build":[
-        {
-            "scr":"./app.js",
-            "user":"@vercel/node"
-        }
+    "version": 2,
+    "name": "taxi-server",
+    "builds": [
+       { "src": "app.js", "use": "@vercel/node" }
     ],
-    "routes":[
-        {
-            "src":"/(.*)",
-            "dest":"/"
-        }
+    "routes": [
+       { "src": "/(.*)", "dest": "/app.js" }
     ]
-}
+ }

@@ -2,12 +2,7 @@ const Sequelize = require("sequelize");
 require("dotenv").config();
 
 const dbConfig = {
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_SCHEMA,
-  host: process.env.DB_HOST_URI,
-  port: process.env.DB_PORT,
-  dialect: process.env.DB_DIALECT
+  connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 };
 
 let config = dbConfig;
